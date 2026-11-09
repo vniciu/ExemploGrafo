@@ -1,0 +1,53 @@
+package exemplografo;
+
+public class ExemploGrafo {
+    public static void main(String[] args) {
+        Grafo<String> grafo = new Grafo<String>();
+
+        // 1. Cadastrando as Ruas (Vértices)
+        grafo.adicionarVertice("Avenida Principal");
+        grafo.adicionarVertice("Trecho Centro-Paulista");
+        grafo.adicionarVertice("Travessa das Flores");
+        grafo.adicionarVertice("Corredor Norte");
+        grafo.adicionarVertice("Rua do Comércio");
+        grafo.adicionarVertice("Alameda dos Anjos");
+        grafo.adicionarVertice("Rua Haddock Lobo");
+        grafo.adicionarVertice("Avenida Central");
+        grafo.adicionarVertice("Rua do Sol");
+        grafo.adicionarVertice("Rua Oscar Freire");
+        grafo.adicionarVertice("Rua Teodoro Sampaio");
+
+        // 2. Cadastrando as Ligações entre as Ruas (Arestas Direcionadas com Pesos)
+        grafo.adicionarAresta(150.0, "Avenida Principal", "Trecho Centro-Paulista");
+        grafo.adicionarAresta(180.0, "Avenida Principal", "Travessa das Flores");
+        grafo.adicionarAresta(130.0, "Avenida Principal", "Rua do Comércio");
+
+        grafo.adicionarAresta(200.0, "Trecho Centro-Paulista", "Corredor Norte");
+
+        grafo.adicionarAresta(160.0, "Travessa das Flores", "Rua do Comércio");
+        grafo.adicionarAresta(220.0, "Travessa das Flores", "Alameda dos Anjos");
+
+        grafo.adicionarAresta(190.0, "Corredor Norte", "Rua Haddock Lobo");
+
+        grafo.adicionarAresta(140.0, "Rua do Comércio", "Trecho Centro-Paulista");
+
+        grafo.adicionarAresta(210.0, "Alameda dos Anjos", "Rua do Comércio");
+        grafo.adicionarAresta(250.0, "Alameda dos Anjos", "Rua Teodoro Sampaio");
+
+        grafo.adicionarAresta(170.0, "Rua Haddock Lobo", "Avenida Central");
+
+        grafo.adicionarAresta(230.0, "Avenida Central", "Corredor Norte");
+        grafo.adicionarAresta(180.0, "Avenida Central", "Rua do Sol");
+
+        grafo.adicionarAresta(200.0, "Rua do Sol", "Rua Teodoro Sampaio");
+
+        grafo.adicionarAresta(220.0, "Rua Teodoro Sampaio", "Rua Oscar Freire");
+
+        grafo.adicionarAresta(260.0, "Rua Oscar Freire", "Avenida Central");
+        grafo.adicionarAresta(290.0, "Rua Oscar Freire", "Trecho Centro-Paulista");
+        grafo.adicionarAresta(270.0, "Rua Oscar Freire", "Alameda dos Anjos");
+
+        // 3. Executando a Busca em Largura e validando passagens e retornos
+        grafo.BuscaEmLargura("Avenida Principal");
+    }
+}
